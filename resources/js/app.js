@@ -1,1 +1,19 @@
-require('./bootstrap');
+import axios from 'axios';
+window.axios = 'axios';
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+window._ = require('lodash');
+
+try {
+    require('bootstrap');
+} catch (e) {}
+
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
+const app = new Vue({
+    el: '#app',
+});
