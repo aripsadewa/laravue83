@@ -5408,6 +5408,12 @@ __webpack_require__.r(__webpack_exports__);
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_views_notes_Show_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/notes/Show.vue */ "./resources/js/views/notes/Show.vue"));
     }
+  }, {
+    path: '/notes/:noteSlug/edit',
+    name: 'notes.edit',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_notes_Edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/notes/Edit.vue */ "./resources/js/views/notes/Edit.vue"));
+    }
   }]
 });
 
@@ -43575,7 +43581,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_Home_vue":1,"resources_js_views_About_vue":1,"resources_js_views_Contact_vue":1,"resources_js_views_notes_Create_vue":1,"resources_js_views_notes_Table_vue":1,"resources_js_views_notes_Show_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_Home_vue":1,"resources_js_views_About_vue":1,"resources_js_views_Contact_vue":1,"resources_js_views_notes_Create_vue":1,"resources_js_views_notes_Table_vue":1,"resources_js_views_notes_Show_vue":1,"resources_js_views_notes_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

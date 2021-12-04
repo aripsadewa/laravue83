@@ -32,6 +32,11 @@ export default {
             path: '/notes/:noteSlug',
             name: 'notes.show',
             component: () => import("../views/notes/Show.vue"),
+        },
+        {
+            path: '/notes/:noteSlug/edit',
+            name: 'notes.edit',
+            component: () => import("../views/notes/Edit.vue"),
         }
     ]
 }
