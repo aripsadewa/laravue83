@@ -2,12 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\NoteResource;
 use App\Models\Note;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
 {
+    public function index()
+    {
+        $notes = Note::with('subject')->latest()->get();
+        return NoteResource::collection($notes);
+    }
+
+    public function show(Note $note)
+    {
+        return new NoteResource($note);
+    }
+
     public function store()
     {
 
