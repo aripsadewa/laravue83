@@ -17,6 +17,10 @@ Vue.use(VueRouter);
 
 import routes from './router/index'
 
+import Toasted from 'vue-toasted';
+ 
+Vue.use(Toasted)
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 const app = new Vue({

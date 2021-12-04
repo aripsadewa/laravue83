@@ -47,6 +47,7 @@
     },
     "homepage": "https://github.com/findarip/laravue83#readme",
     "dependencies": {
-        "vue-router": "^3.5.3"
+        "vue-router": "^3.5.3",
+        "vue-toasted": "^1.1.28"
     }
 }
