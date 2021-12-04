@@ -17,6 +17,11 @@ export default {
             path: '/contact',
             name: 'pages.contact',
             component: () => import("../views/Contact.vue"),
+        },
+        {
+            path: '/notes/create',
+            name: 'notes.create',
+            component: () => import("../views/notes/Create.vue"),
         }
     ]
 }

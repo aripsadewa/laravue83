@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Models\Note;
-use App\Models\Models\Subject;
+use App\Models\Note;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
