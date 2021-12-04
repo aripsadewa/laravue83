@@ -22,6 +22,16 @@ export default {
             path: '/notes/create',
             name: 'notes.create',
             component: () => import("../views/notes/Create.vue"),
+        },
+        {
+            path: '/notes/table',
+            name: 'notes.table',
+            component: () => import("../views/notes/Table.vue"),
+        },
+        {
+            path: '/notes/:noteSlug',
+            name: 'notes.show',
+            component: () => import("../views/notes/Show.vue"),
         }
     ]
 }

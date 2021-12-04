@@ -5305,6 +5305,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log("Component mounted.");
@@ -5389,6 +5395,18 @@ __webpack_require__.r(__webpack_exports__);
     name: 'notes.create',
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_views_notes_Create_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/notes/Create.vue */ "./resources/js/views/notes/Create.vue"));
+    }
+  }, {
+    path: '/notes/table',
+    name: 'notes.table',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_notes_Table_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/notes/Table.vue */ "./resources/js/views/notes/Table.vue"));
+    }
+  }, {
+    path: '/notes/:noteSlug',
+    name: 'notes.show',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_notes_Show_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../views/notes/Show.vue */ "./resources/js/views/notes/Show.vue"));
     }
   }]
 });
@@ -28032,11 +28050,24 @@ var render = function () {
                         1
                       ),
                       _vm._v(" "),
+                      _c(
+                        "li",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "dropdown-item",
+                              attrs: { to: { name: "notes.table" } },
+                            },
+                            [_vm._v("Notes")]
+                          ),
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
                       _vm._m(1),
                       _vm._v(" "),
                       _vm._m(2),
-                      _vm._v(" "),
-                      _vm._m(3),
                     ]
                   ),
                 ]),
@@ -28068,16 +28099,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { staticClass: "dropdown-item", attrs: { href: "#" } }, [
-        _vm._v("Another action"),
-      ]),
-    ])
   },
   function () {
     var _vm = this
@@ -43554,7 +43575,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_Home_vue":1,"resources_js_views_About_vue":1,"resources_js_views_Contact_vue":1,"resources_js_views_notes_Create_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_Home_vue":1,"resources_js_views_About_vue":1,"resources_js_views_Contact_vue":1,"resources_js_views_notes_Create_vue":1,"resources_js_views_notes_Table_vue":1,"resources_js_views_notes_Show_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

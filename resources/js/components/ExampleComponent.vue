@@ -46,7 +46,13 @@
                     >Create</router-link
                   >
                 </li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <router-link
+                    class="dropdown-item"
+                    :to="{ name: 'notes.table' }"
+                    >Notes</router-link
+                  >
+                </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a class="dropdown-item" href="#">Something else here</a>
