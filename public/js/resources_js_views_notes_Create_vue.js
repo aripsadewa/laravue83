@@ -92,6 +92,269 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -102,7 +365,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         subject: ""
       },
       subjects: [],
-      theErrors: []
+      theErrors: [],
+      loading: false
     };
   },
   mounted: function mounted() {
@@ -145,11 +409,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.prev = 0;
-                _context2.next = 3;
+                _this2.loading = true;
+                _context2.prev = 1;
+                _context2.next = 4;
                 return axios__WEBPACK_IMPORTED_MODULE_1__.post("notes/create-new-note", _this2.form);
 
-              case 3:
+              case 4:
                 response = _context2.sent;
 
                 if (response.status === 200) {
@@ -157,6 +422,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this2.form.description = "";
                   _this2.form.subject = "";
                   _this2.theErrors = [];
+                  _this2.loading = false;
 
                   _this2.$toasted.show(response.data.message, {
                     type: "success",
@@ -164,12 +430,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   });
                 }
 
-                _context2.next = 11;
+                _context2.next = 13;
                 break;
 
-              case 7:
-                _context2.prev = 7;
-                _context2.t0 = _context2["catch"](0);
+              case 8:
+                _context2.prev = 8;
+                _context2.t0 = _context2["catch"](1);
+                _this2.loading = false;
 
                 _this2.$toasted.show("Something went wrong.", {
                   type: "error",
@@ -178,12 +445,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
                 _this2.theErrors = _context2.t0.response.data.errors;
 
-              case 11:
+              case 13:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[0, 7]]);
+        }, _callee2, null, [[1, 8]]);
       }))();
     }
   }
@@ -1200,8 +1467,434 @@ var render = function () {
               _vm._v(" "),
               _c(
                 "button",
-                { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                [_vm._v("Save")]
+                {
+                  staticClass: "btn btn-primary d-flex align-items-center",
+                  attrs: { type: "submit" },
+                },
+                [
+                  _vm._v("\n            Save\n            "),
+                  _vm.loading
+                    ? [
+                        _c(
+                          "svg",
+                          {
+                            staticStyle: {
+                              margin: "auto",
+                              background: "none",
+                              display: "block",
+                              "shape-rendering": "auto",
+                            },
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                              width: "20px",
+                              height: "20px",
+                              viewBox: "0 0 100 100",
+                              preserveAspectRatio: "xMidYMid",
+                            },
+                          },
+                          [
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(0 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.9166666666666666s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(30 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.8333333333333334s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(60 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.75s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(90 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.6666666666666666s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(120 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.5833333333333334s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(150 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.5s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(180 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.4166666666666667s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(210 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.3333333333333333s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(240 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.25s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(270 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.16666666666666666s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(300 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "-0.08333333333333333s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "g",
+                              { attrs: { transform: "rotate(330 50 50)" } },
+                              [
+                                _c(
+                                  "rect",
+                                  {
+                                    attrs: {
+                                      x: "47",
+                                      y: "24",
+                                      rx: "3",
+                                      ry: "6",
+                                      width: "6",
+                                      height: "12",
+                                      fill: "#93dbe9",
+                                    },
+                                  },
+                                  [
+                                    _c("animate", {
+                                      attrs: {
+                                        attributeName: "opacity",
+                                        values: "1;0",
+                                        keyTimes: "0;1",
+                                        dur: "1s",
+                                        begin: "0s",
+                                        repeatCount: "indefinite",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    : _vm._e(),
+                ],
+                2
               ),
             ]
           ),
