@@ -53,7 +53,7 @@
                 {{ theErrors.description[0] }}
               </div>
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Update</button>
           </form>
         </div>
       </div>

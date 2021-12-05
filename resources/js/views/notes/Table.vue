@@ -24,8 +24,9 @@ r<template>
           <td>
             <router-link
               :to="{ name: 'notes.edit', params: { noteSlug: note.slug } }"
-              >Edit</router-link
+              ><button class="btn btn-info">Edit</button></router-link
             >
+            <delete-note :endpoint="note.slug" />
           </td>
         </tr>
       </tbody>
@@ -35,11 +36,16 @@ r<template>
 
 <script>
 import * as axios from "axios";
+import DeleteNote from "./Delete.vue";
 export default {
   data() {
     return {
       notes: [],
     };
+  },
+
+  components: {
+    DeleteNote,
   },
 
   mounted() {

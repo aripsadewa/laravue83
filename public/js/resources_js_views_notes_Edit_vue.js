@@ -1204,7 +1204,7 @@ var render = function () {
               _c(
                 "button",
                 { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                [_vm._v("Save")]
+                [_vm._v("Update")]
               ),
             ]
           ),
